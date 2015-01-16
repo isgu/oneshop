@@ -1,0 +1,97 @@
+#----- 商品表 ------
+CREATE TABLE `sp_item` (
+	`id` MEDIUMINT (8) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '商品ID',
+	`category_id` SMALLINT (3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '商品分类ID',
+	`brand_id` SMALLINT (3) UNSIGNED NOT NULL DEFAULT '0' COMMENT '品牌ID',
+	`name` VARCHAR (150) NOT NULL DEFAULT '' COMMENT '商品名称',
+	`description` VARCHAR (255) NOT NULL DEFAULT '' COMMENT '商品描述',
+	`content` TEXT COMMENT '商品详情',
+	`barcode` VARCHAR (30) NOT NULL DEFAULT '' COMMENT '商品码',
+	`stock` MEDIUMINT (6) NOT NULL DEFAULT '0' COMMENT '库存',
+	`price` DECIMAL (10, 2) NOT NULL DEFAULT '0.00' COMMENT '',
+	`market_price` DECIMAL (10, 2) NOT NULL DEFAULT '0.00' COMMENT '市场价',
+	`add_time` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '创建时间',
+	`update_time` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '更新时间',
+	`status` TINYINT (2) UNSIGNED NOT NULL DEFAULT '0' COMMENT '状态',
+	`sort` MEDIUMINT (8) UNSIGNED NOT NULL DEFAULT '0' COMMENT '排序',
+	`clicks` INT (8) UNSIGNED NOT NULL DEFAULT '0' COMMENT '点击数',
+	KEY `category_id` (`category_id`),
+	KEY `brand_id` (`brand_id`),
+	KEY `status` (`status`)
+) ENGINE = MyISAM DEFAULT CHARSET = UTF8;
+
+#----订单payment
+CREATE TABLE `sp_payment` (
+	`id` INT (10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`uid` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '用户Id',
+	`payment_id` BIGINT (16) UNSIGNED NOT NULL DEFAULT '0' COMMENT '订单号',
+	`type` VARCHAR (20) DEFAULT '' COMMENT '支付类型',
+	`add_time` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '支付时间',
+	`note` VARCHAR (255) DEFAULT '' COMMENT '支付说明',
+	`terrace_id` VARCHAR (60) DEFAULT '' COMMENT '支付平台单号'
+) ENGINE = MyISAM DEFAULT CHARSET = UTF8;
+
+#----- 主订单表 -----
+CREATE TABLE `sp_order` (
+	`id` INT (10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '订单ID',
+	`uid` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '用户Id',
+	`type` TINYINT (2) UNSIGNED NOT NULL DEFAULT '0' COMMENT '订单类型',
+	`payment_id` BIGINT (16) UNSIGNED NOT NULL DEFAULT '0' COMMENT '订单号',
+	`title` VARCHAR (125) DEFAULT '' COMMENT '标题',
+	`amount` DECIMAL (10, 2) NOT NULL DEFAULT '0.00' COMMENT '订单总金额',
+	`consignee` VARCHAR (30) NOT NULL DEFAULT '' COMMENT '收货人',
+	`mobile` VARCHAR (30) NOT NULL DEFAULT '' COMMENT '手机',
+	`tel` VARCHAR (30) NOT NULL DEFAULT '' COMMENT '电话号码',
+	`country` SMALLINT (5) NOT NULL DEFAULT '0' COMMENT '国家',
+	`province` SMALLINT (5) NOT NULL DEFAULT '0' COMMENT '地址省份',
+	`city` SMALLINT (5) NOT NULL DEFAULT '0' COMMENT '城市',
+	`district` SMALLINT (5) NOT NULL DEFAULT '0' COMMENT '县/区',
+	`zipcode` VARCHAR (30) NULL DEFAULT '' COMMENT '邮编',
+	`address` VARCHAR (255) NOT NULL DEFAULT '' COMMENT '详细地址',
+	`note` VARCHAR (500) NOT NULL DEFAULT '' COMMENT '订单备注',
+	`track_no` VARCHAR (30) NULL DEFAULT '' COMMENT '物流单号',
+	`track_code` VARCHAR (30) DEFAULT '' COMMENT '物流公司编号',
+	`add_time` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '创建时间',
+	`payment_time` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '支付时间',
+	`refund_time` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '退款时间',
+	`cancel_time` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '取消时间',
+	`status` TINYINT (2) UNSIGNED NOT NULL DEFAULT '0' COMMENT '状态',
+	`sort` MEDIUMINT (8) UNSIGNED NOT NULL DEFAULT '0' COMMENT '排序',
+	KEY `uid` (`uid`),
+	KEY `type` (`type`),
+	KEY `payment_id` (`payment_id`)
+) ENGINE = MyISAM DEFAULT CHARSET = UTF8;
+
+#----- 订单产品表 ----
+-- 订单成功后相关属性attr记录好
+CREATE TABLE `sp_order_item` (
+	`id` INT (10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '自增ID',
+	`order_id` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '订单id',
+	`iid` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '商品id',
+	`title` VARCHAR (255) NOT NULL DEFAULT '' COMMENT '标题',
+	`thumb` VARCHAR (255) NOT NULL DEFAULT '' COMMENT '缩略图',
+	`amount` DECIMAL (10, 2) NOT NULL DEFAULT '0.00' COMMENT '单价',
+	`count` SMALLINT (6) NOT NULL DEFAULT '1' COMMENT '数量',
+	`add_time` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '时间',
+	`sku` VARCHAR (255) NOT NULL DEFAULT '' COMMENT '商品sku',
+	`attr` text COMMENT '相关属性',
+	KEY `order_id` (`order_id`),
+	KEY `iid` (`iid`)
+) ENGINE = MyISAM DEFAULT CHARSET = UTF8;
+
+#----- 购物车表 ----
+-- 购物车下 商品sku 直接读取相关属性
+CREATE TABLE `sp_cart` (
+	`id` INT (10) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY COMMENT '自增ID',
+	`uid` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '用户Id',
+	`iid` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '商品id',
+	`title` VARCHAR (255) NOT NULL DEFAULT '' COMMENT '标题',
+	`thumb` VARCHAR (255) NOT NULL DEFAULT '' COMMENT '缩略图',
+	`amount` DECIMAL (10, 2) NOT NULL DEFAULT '0.00' COMMENT '单价',
+	`count` SMALLINT (6) NOT NULL DEFAULT '1' COMMENT '数量',
+	`add_time` INT (10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '时间',
+	`sku` VARCHAR (255) NOT NULL DEFAULT '' COMMENT '商品sku',
+	KEY `uid` (`uid`),
+	KEY `iid` (`iid`)
+) ENGINE = MyISAM DEFAULT CHARSET = UTF8;
+
