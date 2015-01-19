@@ -20,7 +20,7 @@ return array(
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		
+		'admin',
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'gii',
@@ -53,11 +53,12 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=blog',
+			'connectionString' => 'mysql:host=localhost;dbname=shop',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => 'root',
 			'charset' => 'utf8',
+			'tablePrefix'	=> 'sp_',
 		),
 		
 		'errorHandler'=>array(
@@ -67,10 +68,10 @@ return array(
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
-				array(
-					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
-				),
+				// array(
+				// 	'class'=>'CFileLogRoute',
+				// 	'levels'=>'error, warning',
+				// ),
 				// uncomment the following to show log messages on web pages
 				/*
 				array(
