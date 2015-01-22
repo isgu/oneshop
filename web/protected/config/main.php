@@ -72,7 +72,7 @@ $config = array(
 		
 		'db'=>array(
 				'class'=>'system.db.CDbConnection',				
-				'connectionString'=>'mysql:host=localhost;port=3306;dbname=yiifcms',
+				'connectionString'=>'mysql:host=localhost;port=3306;dbname=tongtianxing',
 				'username'=>'root',
 				'password'=>'root',
 				'emulatePrepare'=>true,  // needed by some MySQL installations
