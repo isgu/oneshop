@@ -47,8 +47,9 @@ $config = array(
 		// uncomment the following to enable URLs in path-format
 		
 		'urlManager'=>array(			
-			//'urlFormat'=>'path',
-			'showScriptName'=>false,			
+			// 'urlFormat'=>'path',
+			'showScriptName'=>false,	
+			'caseSensitive'=>false,		
 			//'urlSuffix'=>'/',			
 			'rules'=>array(
 				'sitemap\.xml' => 'site/sitemap', //网站地图
@@ -119,8 +120,7 @@ $config = array(
 
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
-	'params'=>array(	
-	),
+	'params'=>require(dirname(__FILE__) . '/params.php'),
 );
 $cache =  require(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'cache.php');
 if (!empty($cache)) {

@@ -68,7 +68,7 @@ EOT;
 		}
 		
 		//主题设置		
-		//Yii::app()->theme = $this->_setting['theme'];
+		Yii::app()->theme = $this->_setting['theme'];
 		$this->_stylePath = Yii::app()->theme->baseUrl.'/styles';		
 		
 		//菜单导航
