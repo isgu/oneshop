@@ -1,0 +1,212 @@
+@charset "UTF-8";
+.w1000{width: 1000px; margin: 0 auto;}
+.lr_header{
+	padding: 35px 0;
+	background-color: #242424;
+}
+.lr_header .logo{padding-left: 35px;}
+.lr_box{
+	padding-top: 30px;
+}
+.lr_box h1{font-size: 14px;font-weight: bold;}
+.lr_box .left{padding: 0 70px 0 35px;position: relative;}
+.lr_box .left .row{margin-top: 30px;}
+.lr_box .left .row input[type="text"],.lr_box .row input[type="password"]{
+	width: 280px;
+	padding: 10px;
+	height: 30px;
+	line-height: 30px;
+	border:1px solid #8d8d8d;
+	margin-right: 20px;
+}
+.lr_box .left .row input[type="checkbox"]{
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.lr_box .left .row em{font-size: 14px;vertical-align: middle;}
+.lr_box .left .row2{margin-top: 20px;}
+.lr_box .left .row2 input[type="submit"]{
+	height: 55px;
+	line-height: 55px;
+	background-color: #242424;
+	color: #8d8d8d;
+	cursor: pointer;
+	margin-right: 10px;
+	font-size: 14px;
+}
+.lr_box .left .row2 input[type="button"]:hover{
+	background-color: #111;
+}
+.lr_box .left .row2 .l_btn{
+	width: 150px;
+}
+.lr_box .left .row2.row_r{
+	margin-top:55px;
+}
+.lr_box .left .row2 .r_btn{
+	width: 300px;
+}
+.lr_box .left .row2  a:hover{text-decoration: underline;}
+.lr_box .left .row2 .c999{color: #999;}
+
+.lr_box .right{
+	border-left: 1px dotted #5b5b5b;
+	margin-top: 50px;
+	padding: 20px 0 20px 40px;
+}
+.lr_box .right h2{}
+.lr_box .right .type{clear: both;margin-top:50px;margin-bottom: 110px;}
+.lr_box .right .type .lg_type{
+	padding: 15px 30px 15px 70px;
+	border:1px solid #242424;
+	position: relative;	
+	display: inline-block;
+}
+.lr_box .right .type .lg_type:hover{
+	background-color: #242424;
+	color: #8d8d8d;
+}
+.lr_box .right .type .lg_type.qq_login{margin-right:40px;}
+.lr_box .right .type .lg_type em{
+	position: absolute;
+	background: url('../../images/icon2.png') no-repeat -1px -4px;
+	width: 20px;
+	height: 22px;
+	left: 30px;
+	top:12px;
+}
+.lr_box .right .type .lg_type.wb_login em{
+	background-position: -24px -1px;
+	width: 26px;
+	height: 23px;
+}
+/*完善资料*/
+.lr_box .row .photo img{
+	width: 126px;
+	height: 126px;
+}
+/*end*/
+/*错误提示*/
+
+/*.lr_box .row span.error{color: #cc3333;display: none;}
+.lr_box .row span.error i{
+	display: inline-block;
+	background: url('../images/icon.png') no-repeat -57px -3px;
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+.lr_box .row.input_error em{
+	display: none;
+}
+.lr_box .row.input_error span.error{
+	display: inline-block;
+}
+.lr_box .left .row.input_error input[type="text"], .lr_box .row.input_error input[type="password"]{
+	border:1px solid #cc3333;
+	color: #cc3333;
+}
+.l_box .erro_tips{
+	position: absolute;
+  	left:35px;
+  	top:30px;
+  	color: #cc3333;
+}*/
+.lr_box .row em i{display: none;}
+.lr_box .row em.error i{
+	display: inline-block;
+	background: url('../../images/icon2.png') no-repeat -57px -3px;
+	width: 15px;
+	height: 15px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+.l_box .erro_tips{
+	position: absolute;
+  	left:35px;
+  	top:30px;
+  	color: #cc3333;
+  	display: none;
+}
+/**/
+
+/*忘记密码弹框*/
+.f_password {
+	width: 900px;
+	height: 510px;
+	background-color: #fff;
+	color: #8d8d8d;
+	position: fixed;
+	z-index: 100;
+	display: none;
+}
+.f_password .close {
+	width: 35px;
+	height: 45px;
+	font-size: 40px;
+	color: #d1d1d1;
+	display: inline-block;
+	position: absolute;
+	top: 5px;
+	right: 15px;
+	cursor: pointer;
+}
+.f_password .method {
+	margin-top: 45px;
+	margin-left: 35px;
+}
+.f_password .line {
+	width: 97%;
+	height: 1px;
+	border-bottom: 1px dashed #8d8d8d;
+	margin: 0 auto;
+}
+.f_password h3 {
+	font-size: 14px;
+	color: #323232;
+	font-weight: bold;
+	padding-top: 45px;
+	padding-left: 35px;
+}
+.f_password h4 {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+.f_password .method_1 p {
+	padding-bottom: 38px;
+}
+.f_password .method_2 .step {
+	float: left;
+	width: 165px;
+	height: 105px;
+	display: table;
+	border: 1px solid #8d8d8d;
+	text-align: center;
+}
+.f_password .method_2 .step p {
+	display: table-cell;
+	vertical-align: middle;
+}
+.f_password .method_2 .arrow {
+	background: url('../../images/icon2.png') no-repeat -8px -77px;
+	width: 12px;
+	height: 20px;
+	float: left;
+	margin-top: 45px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+.mask {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.5);
+	display: none;
+}
+
+/*end*/
