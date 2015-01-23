@@ -1,17 +1,30 @@
 <?php
 
-// change the following paths if necessary
-$yii=dirname(__FILE__).'/framework/yii.php';
-$config=dirname(__FILE__).'/protected/config/main.php';
-
-error_reporting(E_ALL & ~E_NOTICE);
-ini_set("display_errors","on");
-// remove the following lines when in production mode
-define('WWWPATH', str_replace(array('\\', '\\\\'), '/', dirname(__FILE__)));
-define('DS','/');
-defined('YII_DEBUG') or define('YII_DEBUG',false);
-// specify how many levels of call stack should be shown in each log message
-//defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
-
-require_once($yii);
-Yii::createWebApplication($config)->run();
+// +----------------------------------------------------------------------
+// | ShuipFCMS
+// +----------------------------------------------------------------------
+// | Copyright (c) 2012-2014 http://www.shuipfcms.com, All rights reserved.
+// +----------------------------------------------------------------------
+// | Author: 水平凡 <admin@abc3210.com>
+// +----------------------------------------------------------------------
+// 检测PHP环境
+if (version_compare(PHP_VERSION, '5.3.0', '<')) {
+    header("Content-type: text/html; charset=utf-8");
+    die('PHP环境不支持，使用本系统需要 PHP > 5.3.0 版本才可以~ !');
+}
+//当前目录路径
+define('SITE_PATH', getcwd() . '/');
+//项目路径
+define('PROJECT_PATH', SITE_PATH . 'shuipf/');
+// 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
+define('APP_DEBUG', false);
+// 应用公共目录
+define('COMMON_PATH', PROJECT_PATH . 'Common/');
+// 定义应用目录
+define('APP_PATH', PROJECT_PATH . 'Application/');
+//应用运行缓存目录
+define("RUNTIME_PATH", SITE_PATH . "#runtime/");
+//模板存放路径
+define('TEMPLATE_PATH', PROJECT_PATH . 'Template/');
+// 引入ThinkPHP入口文件
+require PROJECT_PATH . 'Core/ThinkPHP.php';

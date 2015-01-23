@@ -1,3 +1,10 @@
+#
+# robots.txt for ShuipFCMS
+#
+
 User-agent: *
 
-Disallow: /admin/
+Disallow: /shuipf/
+Disallow: /api/
+Disallow: /api.php
+Disallow: /admin.php
