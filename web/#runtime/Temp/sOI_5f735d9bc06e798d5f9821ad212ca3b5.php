@@ -1,3 +1,3 @@
 <?php
-//000000000300a:3:{s:7:"license";a:3:{s:9:"authorize";b:0;s:4:"name";s:15:"非授权用户";s:4:"date";i:1421979331;}s:13:"latestversion";a:2:{s:5:"build";s:8:"20140915";s:7:"version";s:5:"2.0.3";}s:6:"notice";a:5:{s:2:"id";s:1:"3";s:5:"title";s:46:"Wap手机版有啦，你妈妈喊你安装啦~";s:7:"content";s:200:"<p>感谢ShuipFCMS Fans交流群随风分享的wap手机版模块现在已经提供下载，直接可以在后台在线商店下载安装！</p><p>地址：http://www.shuipfcms.com/extend/31.shtml</p>";s:3:"url";s:40:"http://www.shuipfcms.com/extend/31.shtml";s:11:"create_time";s:1:"0";}}
+//000000000300a:3:{s:7:"license";a:3:{s:9:"authorize";b:0;s:4:"name";s:15:"非授权用户";s:4:"date";i:1422000326;}s:13:"latestversion";a:2:{s:5:"build";s:8:"20140915";s:7:"version";s:5:"2.0.3";}s:6:"notice";a:5:{s:2:"id";s:1:"3";s:5:"title";s:46:"Wap手机版有啦，你妈妈喊你安装啦~";s:7:"content";s:200:"<p>感谢ShuipFCMS Fans交流群随风分享的wap手机版模块现在已经提供下载，直接可以在后台在线商店下载安装！</p><p>地址：http://www.shuipfcms.com/extend/31.shtml</p>";s:3:"url";s:40:"http://www.shuipfcms.com/extend/31.shtml";s:11:"create_time";s:1:"0";}}
 ?>
