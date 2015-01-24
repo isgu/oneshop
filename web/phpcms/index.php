@@ -17,7 +17,7 @@ if(isset($_GET['l']) AND  $_GET['l']=='zh'){
 if(isset($_GET['l']) AND  $_GET['l']=='en'){ 
   $_SESSION['language'] = 'en';
 }
-var_dump($_SESSION['language']);
+// var_dump($_SESSION['language']);
 pc_base::creat_app();
 
 ?>
