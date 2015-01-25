@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="description" content="{$SEO['description']}">
+<link href="{CSS_PATH}resets.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}common.css" rel="stylesheet" type="text/css" />
+<link href="{CSS_PATH}css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{JS_PATH}jquery-1.11.1.min.js"></script>
+<script src="{JS_PATH}index.js" ></script>
+</head>
+<body>
+ <div class="header">
+    <div class="wrap">
+        <div class="top">
+          
+            <script type="text/javascript">document.write('<iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid={get_siteid()}" allowTransparency="true"  width="500" height="24" frameborder="0" scrolling="no"></iframe>')
+            </script>
+            <a href="{siteurl($siteid)}?l=en">ENGLISH</a>
+            <a href="{siteurl($siteid)}?l=zh">中文</a>
+        </div>
+        <div class="navi">
+            <div class="logo fl">
+                <a href="{siteurl($siteid)}" title="" target="_blank">
+                    <img src="{IMG_PATH}logo.png" alt="logo"/>
+                </a>
+            </div>
+            <div class="menu fr">
+                {pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
+                <a href="{siteurl($siteid)}" target="_blank">首页</a>
+                {loop $data $r}
+                <a href="{$r[url]}" target="_blank">{$r[catname]}</a>
+                {/loop}
+                {/pc}
+            </div>
+        </div>
+    </div>  
+</div>
+
+

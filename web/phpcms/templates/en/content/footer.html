@@ -1,0 +1,35 @@
+<!--footer-->
+    <div class="footer cf">
+        <div class="wrap">
+            <div class="left fl">
+                <h1>关于我们</h1>
+                <img src="{IMG_PATH}/QR.jpg" alt="微信二维码" width="120px" height="120px"/>
+                <p>通天星微信平台</p>
+            </div>
+            <div class="right link fl">
+                {php $i=1}
+                {pc:content action="category" catid="28" num="4" order="listorder ASC"}
+                {loop $data $r}
+                <div class="part part{$i}">
+                    <h1>{$r['catname']}</h1>
+                    {pc:content action="category" catid="$r[catid]" order="listorder ASC" return="value"}
+                    {loop $value $v}
+                    <p><a href="{$v['url']}" target="_blank">{$v['catname']}</a></p>
+                    {/loop}
+                    {/pc}
+                </div>
+                {$i++}
+                {/loop}
+                {/pc}
+                
+            </div>
+        </div>
+    </div>
+    <!--footer end-->
+    <!--copyright-->
+    <div class="copyright">
+        Copyright ©2012-2014 深圳市通天星科技有限公司 Shenzhen Babelstar Inc.All rights reserved.粤ICP12085146
+    </div>
+    <!--copyright end-->
+</body>
+</html>
