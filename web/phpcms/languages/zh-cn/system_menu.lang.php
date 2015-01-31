@@ -454,4 +454,8 @@ $LANG['complete_info'] = '填写资料';
 $LANG['clear_data'] = '一键清理';
 $LANG['player_manage'] = '播放器管理';
 $LANG['video_upload'] = '视频上传'; 
+$LANG['PRO_CATE'] = '产品分类';
+$LANG['PRO_BRAND'] = '厂家品牌';
+$LANG['PRO_BRAND'] = '厂家品牌';
+$LANG['PRO_CATE'] = '产品分类';
 ?>

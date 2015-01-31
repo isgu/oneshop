@@ -25,6 +25,7 @@ $fields = array('text'=>'单行文本',
 				'map'=>'地图字段',
 				'omnipotent'=>'万能字段',
 				'video'=>'视频库',
+				'content_tag'=>'分类属性',
 				);
 //不允许删除的字段，这些字段讲不会在字段添加处显示
 $not_allow_fields = array('catid','typeid','title','keyword','posid','template','username');
