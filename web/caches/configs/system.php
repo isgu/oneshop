@@ -21,7 +21,7 @@ return array(
 
 //附件相关配置
 'upload_path' => PHPCMS_PATH.'uploadfile/',
-'upload_url' => 'http://www.g-sky.cn/uploadfile/', //附件路径
+'upload_url' => '/uploadfile/', //附件路径
 'attachment_stat' => '1',//是否记录附件使用状态 0 统计 1 统计， 注意: 本功能会加重服务器负担
 
 'js_path' => 'http://www.g-sky.cn/statics/js/', //CDN JS
