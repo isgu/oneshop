@@ -30,6 +30,17 @@ class index {
 		$CATEGORYS = getcache('category_content_'.$siteid,'commons');
 		include template('content','index',$default_style);
 	}
+	//产品搜索
+	public function goods_list(){
+		$db = pc_base::load_model('content_model');
+        $db->set_model(12); //模型id  
+        $catid = 27;
+        $where = 'catid= ' . $catid . '';
+        $where .= " AND `title` like '%".$_GET['title']."%'";
+        $datas = $db->listinfo($where,'id desc',$_GET['page'] , 2);
+        $pages = $db->pages;
+        include template('content','list_goods');
+	}
 	//内容页
 	public function show() {
 		$catid = intval($_GET['catid']);

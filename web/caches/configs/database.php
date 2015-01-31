@@ -2,9 +2,9 @@
 
 return array (
 	'default' => array (
-		'hostname' => 'localhost',
+		'hostname' => '192.168.0.88',
 		'database' => 'ttx',
-		'username' => 'root',
+		'username' => 'www',
 		'password' => 'root',
 		'tablepre' => 'ttx_',
 		'charset' => 'utf8',

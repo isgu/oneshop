@@ -1,66 +1,93 @@
 {template "content","header"}
-<!--news-->
-    <div class="news news_c">
-        <div class="tit wrap">热点新闻</div>
-        <div class="idx_part1 cf">
-            <div class="wrap">
-                <ul>
-                {php $i=1}
-                {pc:get sql="select * from ttx_poster where spaceid='12'" num="4"}
-                {loop $data $r}
-                <?php $array = string2array($r['setting']); ?>
-                    <li {if $i==1} class="first" {/if}>
-                        <h1><a href="{$array[1]['linkurl']}" target="_blank">{$array[1]['alt']}</a></h1>
-                        <p>{$r['name']}</p>
-                        <div class="pic">
-                            <a href="{$array[1]['linkurl']}" target="_blank">
-                                <img src="{$array[1]['imageurl']}" alt="{$array[1]['alt']}"/>
-                            </a>
-                        </div>
+<?php 
+if(!$datas){
+$db = pc_base::load_model('content_model');
+            $db->set_model(12); //模型id  
+            $catid = 27;
+            $where = 'catid= ' . $catid . '';
+            $where .= " AND `title` like '%".$_GET['title']."%'";
+            $datas = $db->listinfo($where,'id desc',$_GET['page'] , 2);
+            $pages = $db->pages;
+            // var_dump($datas);exit;
+}
+?>
+<div class="pro_application">
+        <div class="wrap pro_appl_com">
+            <div class="type">
+                <ul class="cf">
+                    {pc:content action="position" posid="18" num="4"}
+                    {loop $data $r}
+                    <li>
+                        <a href="{$r['url']}">
+                            <div class="pic">
+                                <img src="{$r['thumb']}"/>
+                                <p>{$r['title']}</p>
+                            </div>
+                        </a>
                     </li>
-                {$i++}
-                {/loop}
-                {/pc}
-                </ul>
-            </div>
-        </div>
-        <!--end-->
-        <div class="wrap">
-            <div class="news_list cf">
-                <div class="list_tit cf">
-                    <ul>
-                        <li {if $_GET['catid']==12} class="active" {/if}><a href="{$CATEGORYS[12][url]}">全部新闻</a></li>
-                    {pc:content action="category" catid="12" num="25" siteid="$siteid" order="listorder ASC" return="newsTitle"}
-                    {loop $newsTitle $r}
-                        <li {if $_GET['catid']==$r['catid']} class="active" {/if}><a href="{$r[url]}">{$r[catname]}</a></li>
                     {/loop}
                     {/pc}
-                    </ul>
-                </div>
-                <div class="con cf">
-                    <ul>
-                        <li class="active">
-                            {pc:content action="lists" catid="$catid" num="20" order="id DESC" limit="" page="$page"}
-                            {loop $data $r}
-                            <div class="rows">
-                                <h1><a href="{$r['url']}" target="_blank" alt="">{$r['title']}</a></h1>
-                                <div class="time">2014年12月6日</div>
-                                <div class="txt">
-                                    {str_cut($r['description'] , 500 , '...' )}<a href="{$r[url]}" class="more">查看更多</a>
+                </ul>
+            </div>
+            <div class="type_info">
+                <ul class="type_info_ul">
+                    <li class="active">
+                        <div class="top cf">
+                            <div class="pro_type fl">
+                                <div class="rows">
+                                    <div class="left fl">产品类别：</div>
+                                    <div class="right">
+                                        <a href="javascript:;">SD车载录像机     </a>
+                                        <a href="javascript:;">4路硬盘车载录像机</a>
+                                        <a href="javascript:;">6路硬盘车载录像机</a>
+                                        <a href="javascript:;">8路硬盘车载录像机</a>
+                                    </div>
+                                </div>
+                                <div class="rows">
+                                    <div class="left fl">产品类别：</div>
+                                    <div class="right">      
+                                        <a href="javascript:;">易甲文</a>
+                                        <a href="javascript:;">奥多视</a>
+                                        <a href="javascript:;">保时安</a>
+                                    </div>
                                 </div>
                             </div>
-                            {/pc}
-                            {/loop}
-                        </li>  
-                       
-                    </ul>
-                </div>
+                            <form action="" method="get" id="searchForm">
+                                <div class="search fr">
+                                    <input type="text" name="title" placeholder="比如：SD卡机 支持JT808" value="<?php echo $_GET['title']; ?>"/>
+                                    <input type="hidden" name="m" value="<?php echo $_GET['m']; ?>"/>
+                                    <input type="hidden" name="c" value="<?php echo $_GET['c']; ?>"/>
+                                    <input type="hidden" name="a" value="goods_list"/>
+                                    <input type="hidden" name="catid" value="27"/>
+                                    <a href="javascript:;" class="btn" onclick="$('#searchForm').submit();" ><i></i></a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="pro_list cf">
+                            <ul> 
+                                
+                                {loop $datas $r}
+                                <li class="first">
+                                    <div class="pic">
+                                        <a href="{$r['url']}" target="_blank"><img src="{$r['thumb']}"/></a>
+                                    </div>
+                                    <div class="txt">
+                                        <div class="name"> <a href="{$r['url']}" target="_blank">{$r['title']}</a></div>
+                                        <p><a href="{$r['make_url']}" target="_blank">去厂家咨询</a></p>
+                                    </div>
+                                </li>
+                                {/loop}
+                              
+                            </ul>
+                        </div>
+                    </li>
+                   
+                </ul>
+            </div>
+            <div class="page">
+                 {$pages}
             </div>
         </div>
-        <div class="page">
-            {$pages}
-        </div>
+        
     </div>
-    
-    <!--news end-->
 {template "content","footer"}

@@ -1,0 +1,131 @@
+{template "content","header"}
+
+ <div class="pro_appl_info ">
+        <div class="wrap pro_appl_com">
+            <div class="type">
+                <ul class="cf">
+                    {pc:content action="position" posid="18" num="4"}
+                    {loop $data $r}
+                    <li>
+                        <a href="{$r['url']}">
+                            <div class="pic">
+                                <img src="{$r['thumb']}"/>
+                                <p>{$r['title']}</p>
+                            </div>
+                        </a>
+                    </li>
+                    {/loop}
+                    {/pc}
+                </ul>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="type2 cf">
+                <div class="type2_list fl">
+                    <div class="rows">                      
+                        <a href="javascript:;">SD车载录像机</a>
+                        <a href="javascript:;">4路硬盘车载录像机</a>
+                        <a href="javascript:;">6路硬盘车载录像机</a>
+                        <a href="javascript:;">8路硬盘车载录像机</a>
+                    </div>
+                </div>
+                <div class="search fr">
+                    <input type="text" placeholder="比如：SD卡机 支持JT808"/>
+                    <a href="javascript:;" class="btn"><i></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="info cf bgc2">
+            <div class="wrap">
+                <a href= "javscript:history.go(-1)" class="back"> </a>
+                <h1>{$title}</h1>
+                <div class="row cf">
+                    <div class="share fl">
+                        <a href="" class="ico1"></a>
+                        <a href="" class="ico2"></a>
+                        <a href="" class="ico3"></a>
+                        <a href="" class="ico4"></a>
+                        <a href="" class="ico5"></a>
+                        <a href="" class="ico6"></a>
+                        <a href="" class="ico7"></a>
+                    </div>
+                    <div class="ask fr"><a href="{$make_url}" target="_blank"></a></div>
+                </div>
+                <div class="scroll">
+                    <div class="scroll_con">
+                        <ul class="b_img">
+                           
+                            <li><img src="{$img['url']}"/></li>
+                           
+                        </ul>
+                    </div>
+                    
+                    <a href="javascript:;" class="prev arrow"></a>
+                    <a href="javascript:;" class="next arrow"></a>
+                    <ul class="s_img">
+                        {loop $product_images $img}
+                        <li><img src="{$img['url']}" width="112" height="112" /></li>
+                        {/loop}
+                    </ul>
+                </div>
+                <div class="describe">
+                    {$content}
+                </div>
+            </div>   
+        </div>
+        <div class="same_pro">
+            <div class="wrap">
+                <h1>同一厂家相关产品</h1>
+                <div class="pro_list cf">
+                    <ul>    
+                        <li class="first">
+                            <div class="pic">
+                                <a href="" target="_blank"><img src="" <="" a="">
+                            </a></div><a href="" target="_blank">
+                            </a><div class="txt"><a href="" target="_blank">
+                                </a><div class="name"><a href="" target="_blank"> </a><a href="" target="_blank">车载监控 迷你4路D1DVR系统迷你4路D1DVR系统迷你4路D1DVR系统 高清SD</a></div>
+                                <p><a href="" target="_blank">去厂家咨询</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pic">
+                                <a href="" target="_blank"><img src="" <="" a="">
+                            </a></div><a href="" target="_blank">
+                            </a><div class="txt"><a href="" target="_blank">
+                                </a><div class="name"><a href="" target="_blank"> </a><a href="" target="_blank">车载监控 迷你4路D1DVR系统 高清SD</a></div>
+                                <p><a href="" target="_blank">去厂家咨询</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pic">
+                                <a href="" target="_blank"><img src="" <="" a="">
+                            </a></div><a href="" target="_blank">
+                            </a><div class="txt"><a href="" target="_blank">
+                                </a><div class="name"><a href="" target="_blank"> </a><a href="" target="_blank">车载监控 迷你4路D1DVR系统 高清SD</a></div>
+                                <p><a href="" target="_blank">去厂家咨询</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pic">
+                                <a href="" target="_blank"><img src="" <="" a="">
+                            </a></div><a href="" target="_blank">
+                            </a><div class="txt"><a href="" target="_blank">
+                                </a><div class="name"><a href="" target="_blank"> </a><a href="" target="_blank">车载监控 迷你4路D1DVR系统 高清SD</a></div>
+                                <p><a href="" target="_blank">去厂家咨询</a></p>
+                            </div>
+                        </li>
+                        <li class="first">
+                            <div class="pic">
+                                <a href="" target="_blank"><img src="" <="" a="">
+                            </a></div><a href="" target="_blank">
+                            </a><div class="txt"><a href="" target="_blank">
+                                </a><div class="name"><a href="" target="_blank"> </a><a href="" target="_blank">车载监控 迷你4路D1DVR系统 高清SD</a></div>
+                                <p><a href="" target="_blank">去厂家咨询</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{template "content","footer"}

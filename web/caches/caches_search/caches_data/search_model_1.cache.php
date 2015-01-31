@@ -12,6 +12,12 @@ return array (
     'name' => '平台模型',
     'sort' => '0',
   ),
+  14 => 
+  array (
+    'typeid' => '57',
+    'name' => '联系我们模型',
+    'sort' => '0',
+  ),
   1 => 
   array (
     'typeid' => '1',

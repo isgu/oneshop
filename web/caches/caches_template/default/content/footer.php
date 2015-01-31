@@ -8,11 +8,11 @@
             </div>
             <div class="right link fl">
                 <?php $i=1?>
-                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=8cace473c1030fa582984e571d1979c9&action=category&catid=28&num=4&order=listorder+ASC\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">修改</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'category')) {$data = $content_tag->category(array('catid'=>'28','order'=>'listorder ASC','limit'=>'4',));}?>
+                <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=8cace473c1030fa582984e571d1979c9&action=category&catid=28&num=4&order=listorder+ASC\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'category')) {$data = $content_tag->category(array('catid'=>'28','order'=>'listorder ASC','limit'=>'4',));}?>
                 <?php $n=1;if(is_array($data)) foreach($data AS $r) { ?>
                 <div class="part part<?php echo $i;?>">
                     <h1><?php echo $r['catname'];?></h1>
-                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=f8563a8369882022430f8299cd67b6c7&action=category&catid=%24r%5Bcatid%5D&order=listorder+ASC&return=value\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">修改</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'category')) {$value = $content_tag->category(array('catid'=>$r[catid],'order'=>'listorder ASC','limit'=>'20',));}?>
+                    <?php if(defined('IN_ADMIN')  && !defined('HTML')) {echo "<div class=\"admin_piao\" pc_action=\"content\" data=\"op=content&tag_md5=f8563a8369882022430f8299cd67b6c7&action=category&catid=%24r%5Bcatid%5D&order=listorder+ASC&return=value\"><a href=\"javascript:void(0)\" class=\"admin_piao_edit\">编辑</a>";}$content_tag = pc_base::load_app_class("content_tag", "content");if (method_exists($content_tag, 'category')) {$value = $content_tag->category(array('catid'=>$r[catid],'order'=>'listorder ASC','limit'=>'20',));}?>
                     <?php $n=1;if(is_array($value)) foreach($value AS $v) { ?>
                     <p><a href="<?php echo $v['url'];?>" target="_blank"><?php echo $v['catname'];?></a></p>
                     <?php $n++;}unset($n); ?>

@@ -245,10 +245,10 @@
 .project .project_c .right .rows h1{font-size: 24px;color: #000;}
 .project .project_c .right .rows p{padding: 10px 0 20px 0;line-height: 22px;color: #000;}
 .project .project_part3 .left{background: url('../images/project/save.png') no-repeat; }
-.project .project_part4,.project .project_part5,.project .project_part6,.project .project_part7,.project .project_part8{padding: 50px 0 40px 0;text-align: center;} 
-.project h1{font-size: 24px;color: #000;}
-.project .project_part4 p,.project .project_part5 p,.project .project_part6 p,.project .project_part7 p,.project .project_part8 p{font-size:18px;color: #333;padding:10px 0;max-width: 900px;margin: 0 auto;text-align: center;}
-.project .project_part5 p{text-align: left;text-indent: 20px;}
-.project .project_part6 h1,.project .project_part7 h1,.project .project_part8 h1{padding-bottom: 10px;text-align: center;}
-.project .project_part6 p,.project .project_part7 p,.project .project_part8 p{padding: 0;}
-.project .project_part6 img,.project .project_part7 img,.project .project_part8 img{padding-top: 10px;}
+
+.project .project_c2{padding: 50px 0 40px 0;text-align: center;}
+.project .project_c2 h1{font-size: 24px;color: #000;padding-bottom: 10px;}
+.project .project_c2 p{font-size:18px;color: #333;padding:5px 0;max-width: 900px;margin: 0 auto;text-align: center;}
+.project .project_c2 img{display: block;padding-top: 10px;}
+
+/*方案中心 end*/
